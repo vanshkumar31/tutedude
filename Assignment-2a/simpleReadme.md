@@ -1,10 +1,5 @@
 # Assignment 2 — Menu-Driven Calculator
 
-## Overview
-
-This assignment implements a menu-driven calculator in Python.
-It uses separate functions for addition, subtraction, multiplication, and division, repeats until the user exits
-
 ## Functions
 
 - `add(x, y)` — adds two numbers.
@@ -13,17 +8,13 @@ It uses separate functions for addition, subtraction, multiplication, and divisi
 - `divide(x, y)` — checks for a zero divisor before dividing.
 
 ## Code Explanation
+It use infinity loop using `while True` it keep on executing until user select the option which have `break` statement which is use to exit from the loop
 
-The `while True` loop keeps the calculator running until option `5` is selected.
+To determine the Menu option execute proper operation we use the `if -elif-else` based on choise that perticular condition come true then it execute the operation 
 
-The program uses `if-elif-else` statements to select the requested operation and stores the two user inputs in `num1` and `num2`. The returned value is stored in `result`.
+for `division ` we check the **denominator** if it is equal to zero show the user `Please Enter Number Greater than 0 `
 
-The `divide()` function checks whether the divisor is zero before performing the division:
-
-```python
-if y == 0:
-    return "Error: Cannot divide by zero."
-```
+>Here are some example 
 
 ### Addition
 
@@ -76,3 +67,7 @@ Enter second number: 0
 Result: Error: Cannot divide by zero.
 ```
 ![Division by Zero](screenshots/05-division-by-zero.png)
+
+
+## GitHub Repo
+[Assinment-2 ](https://github.com/vanshkumar31/tutedude/tree/main/Assignment-2)
