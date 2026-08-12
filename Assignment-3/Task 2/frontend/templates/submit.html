@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Submission Successful</title>
     <style>
         :root {
             --bg-dark: #0f172a;
@@ -17,6 +17,7 @@
             --card-bg: #ffffff;
             --success-bg: #dcfce7;
             --success-text: #166534;
+
         }
 
         * {
@@ -109,7 +110,8 @@
             border: 1px solid #bbf7d0;
         }
 
-  
+
+
         .footer {
             background-color: var(--bg-dark);
             color: #ffffff;
@@ -156,8 +158,8 @@
     </nav>
 
     <header class="hero">
+        <h1>Welcome, {{ name }}!</h1>
 
-        <h1>Thank You for Visiting, {{ name }}!</h1>
     </header>
 
     <main class="container">
@@ -165,17 +167,19 @@
         <!-- 🔔 Shows notification banner only after form submission -->
         {% if success %}
         <div class="alert-success">
-            {{ success }}
+            {{ message }}
         </div>
-     
-
+        {% else %}
+        <div class="alert-error">
+            {{ message }}
+        </div>
         {% endif %}
-        </main>
-        
-        <footer class="footer">
-            <p>&copy; 2026 Welcome Portal. All operations secure.</p>
-        </footer>
-        
-        </body>
-        
-        </html>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Welcome Portal. All operations secure.</p>
+    </footer>
+
+</body>
+
+</html>
