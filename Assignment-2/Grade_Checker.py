@@ -59,18 +59,18 @@ def get_subject_marks(num_subject):
 
 
 # Function to calculate the grade
-def calculate_grade(user_marks):
+def calculate_grade(percentage):
 
-    if user_marks >= 90:
+    if percentage >= 90:
         return "A"
 
-    elif user_marks >= 80:
+    elif percentage >= 80:
         return "B"
 
-    elif user_marks >= 70:
+    elif percentage >= 70:
         return "C"
 
-    elif user_marks >= 60:
+    elif percentage >= 60:
         return "D"
 
     else:
@@ -102,15 +102,15 @@ total_marks = get_subject_marks(num_subject)
 
 
 # Calculate average
-user_marks = total_marks / num_subject
+percentage = total_marks / num_subject
 
 
 # Calculate grade
-grade = calculate_grade(user_marks)
+grade = calculate_grade(percentage)
 
 
 # Display result
 print("\n===== RESULT =====")
 print(f"Total Marks: {total_marks:g}")
-print(f"Percentage: {user_marks:.2f}%")
+print(f"Percentage: {percentage:.2f}%")
 print(f"You scored a {grade} Grade!")
