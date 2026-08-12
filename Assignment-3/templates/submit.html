@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --accent: #f59e0b;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --success-bg: #dcfce7;
+            --success-text: #166534;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-dark);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar-links li {
+            margin: 0 1.5rem;
+        }
+
+        .navbar-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.2s ease;
+        }
+
+        .navbar-links a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            background-color: var(--bg-dark);
+            min-height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 3rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 650px;
+        }
+
+        .container {
+            max-width: 800px;
+            /* Narrowed down layout for perfect form alignment */
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 🔔 Success Alert Message Box */
+        .alert-success {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+            border: 1px solid #bbf7d0;
+        }
+
+  
+        .footer {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .navbar-links li {
+                margin: 0 0.75rem;
+            }
+
+            .navbar-links a {
+                font-size: 0.95rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+
+        <h1>Thank You for Visiting, {{ name }}!</h1>
+    </header>
+
+    <main class="container">
+
+        <!-- 🔔 Shows notification banner only after form submission -->
+        {% if success %}
+        <div class="alert-success">
+            {{ success }}
+        </div>
+     
+
+        {% endif %}
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2026 Welcome Portal. All operations secure.</p>
+        </footer>
+        
+        </body>
+        
+        </html>
